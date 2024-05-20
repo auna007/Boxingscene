@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "boxers",
+  "info": {
+    "singularName": "boxer",
+    "pluralName": "boxers",
+    "displayName": "boxer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
