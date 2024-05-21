@@ -12,41 +12,41 @@ export const navlists = [
     {
         name: 'FEATURES',
         icon: FeatureIcon,
-        link: ''
+        link: 'features'
     },
     {
         name: 'SCHEDULES',
         icon: SchedulesIcon,
-        link: ''
+        link: 'schedules'
     },
     {
         name: 'RESULT',
         icon: ResultIcon,
-        link: ''
+        link: 'result'
     },
     {
         name: 'RANKING',
         icon: RankingIcon,
-        link: ''
+        link: 'ranking'
     },
     {
         name: 'VIDEOS',
         icon: VideosIcon,
-        link: ''
+        link: 'videos'
     },
     {
         name: 'FORUM',
         icon: ForumIcon,
-        link: ''
+        link: 'forum'
     },
     {
         name: 'SEARCH',
         icon: SearchIcon,
-        link: ''
+        link: 'search'
     },
     {
         name: 'SIGN IN/LOGIN',
         icon: LoginSignupIcon,
-        link: ''
+        link: 'login'
     },
 ]

@@ -1,16 +1,14 @@
 import Image from "next/image";
-import Logo from '@/public/icons/logo.svg'
 import ArrowRed from '@/public/icons/arrow-right-red.svg'
 import HeroImage from '@/public/images/hero-image.png'
-import { navlists } from "./lib/navbar-lists";
 import Link from "next/link";
-import Navbar from "./components/navbar";
 import NewsFeed from "./ui/home/newsfeed";
+import Photos from "./ui/home/photos";
+import Videos from "./ui/home/videos";
 
 export default function Home() {
   return (
     <main className="">
-      <Navbar Logo={Logo} navlists={navlists} Link={Link} Image={Image} />
 
       <main className="grid grid-cols-2 gap-7 mt-10 px-20 py-7">
         <div className="">
@@ -31,10 +29,12 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Border div */}
-      <div className="w-full border border-black mt-6"></div>
-
       <NewsFeed />
+      <div className="px-20 mt-4">
+        <div className='w-full border-t-2 border-primary-gray'></div>
+      </div>
+      <Photos />
+      <Videos />
 
     </main>
   );

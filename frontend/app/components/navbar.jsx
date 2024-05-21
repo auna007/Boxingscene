@@ -1,12 +1,17 @@
-import React from 'react'
+import Image from "next/image";
+import Logo from '@/public/icons/logo.svg'
+import { navlists } from "../lib/navbar-lists";
+import Link from "next/link";
 
-const Navbar = ({Logo, navlists, Link, Image}) => {
+const Navbar = () => {
     return (
-        <header className='w-full flex items-center justify-between px-20 py-7 border-b border-2 border-black'>
-            <Image 
-                src={Logo}
-                alt='Boxing Scene Logo'
-            />
+        <header className='w-full flex items-center justify-between px-20 py-7 border-b-2 border-black'>
+            <Link href='/'>
+                <Image 
+                    src={Logo}
+                    alt='Boxing Scene Logo'
+                />
+            </Link>
             <ul className="flex items-center gap-5">
                 {navlists.map((list) => (
                     <li>
