@@ -119,7 +119,59 @@ const Page = () => {
                 <LoadMoreStories />
             </div>
             <div className='basis-[30%]'>
-
+                <h2 className='text-primary-red font-semibold'>TRENDING TOPIC</h2>
+                <ul className='flex flex-col gap-y-4 mt-6'>
+                    <li className='border-b-2 pb-3'>
+                        <div className='flex items-center justify-between gap-1'>
+                            <p className='font-semibold text-sm'>Tyson Fury</p>
+                            <Image
+                                src={ArrowRed}
+                                width={6}
+                            />
+                        </div>
+                        <p className='text-sm text-primary-gray mt-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A recusandae et quisquam necessitatibus deserunt quidem debitis amet suscipit magni expedita?</p>
+                    </li>
+                    <li className='border-b-2 pb-3'>
+                        <div className='flex items-center justify-between gap-1'>
+                            <p className='font-semibold text-sm'>Tyson Fury</p>
+                            <Image
+                                src={ArrowRed}
+                                width={6}
+                            />
+                        </div>
+                        <p className='text-sm text-primary-gray mt-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A recusandae et quisquam necessitatibus deserunt quidem debitis amet suscipit magni expedita?</p>
+                    </li>
+                    <li className='border-b-2 pb-3'>
+                        <div className='flex items-center justify-between gap-1'>
+                            <p className='font-semibold text-sm'>Tyson Fury</p>
+                            <Image
+                                src={ArrowRed}
+                                width={6}
+                            />
+                        </div>
+                        <p className='text-sm text-primary-gray mt-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A recusandae et quisquam necessitatibus deserunt quidem debitis amet suscipit magni expedita?</p>
+                    </li>
+                    <li className='border-b-2 pb-3'>
+                        <div className='flex items-center justify-between gap-1'>
+                            <p className='font-semibold text-sm'>Tyson Fury</p>
+                            <Image
+                                src={ArrowRed}
+                                width={6}
+                            />
+                        </div>
+                        <p className='text-sm text-primary-gray mt-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A recusandae et quisquam necessitatibus deserunt quidem debitis amet suscipit magni expedita?</p>
+                    </li>
+                    <li className='border-b-2 pb-3'>
+                        <div className='flex items-center justify-between gap-1'>
+                            <p className='font-semibold text-sm'>Tyson Fury</p>
+                            <Image
+                                src={ArrowRed}
+                                width={6}
+                            />
+                        </div>
+                        <p className='text-sm text-primary-gray mt-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A recusandae et quisquam necessitatibus deserunt quidem debitis amet suscipit magni expedita?</p>
+                    </li>
+                </ul>
             </div>
         </main>
     )

@@ -15,11 +15,11 @@ const Navbar = () => {
             <ul className="flex items-center gap-5">
                 {navlists.map((list) => (
                     <li>
-                    <Link href={list.link} className="flex flex-col justify-center items-center gap-1">
+                    <Link href={list.link} className="flex flex-col items-center gap-2">
                         <Image
                         src={list.icon}
                         />
-                        <p>{list.name}</p>
+                        <p className="font-semibold text-[#5e5d5d]">{list.name}</p>
                     </Link>
                     </li>
                 ))}

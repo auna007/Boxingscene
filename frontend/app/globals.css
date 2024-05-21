@@ -6,3 +6,27 @@
     border-bottom: 1px solid #979797;
     padding-bottom: 10px;
 }
+
+.coverage-border-not-last-child:not(:last-child){
+    border-right: 1px solid black;
+}
+
+.fights-border-not-last-child:not(:last-child){
+    border-bottom: 1px solid black;
+}
+
+.winner {
+    transform: skewX(-30deg);
+}
+
+.straight-text {
+    transform: skewX(30deg)
+}
+
+.parent-hover:hover .child-hover{
+ transform: scale(1.1);
+}
+
+.child-hover{
+    transition: transform 0.3s ease;
+}
