@@ -801,6 +801,11 @@ export interface ApiBoxerBoxer extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required;
     country: Attribute.String & Attribute.Required;
+    boxer_matches: Attribute.Relation<
+      'api::boxer.boxer',
+      'manyToMany',
+      'api::boxer-match.boxer-match'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -812,6 +817,76 @@ export interface ApiBoxerBoxer extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::boxer.boxer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBoxerMatchBoxerMatch extends Schema.CollectionType {
+  collectionName: 'boxer_matches';
+  info: {
+    singularName: 'boxer-match';
+    pluralName: 'boxer-matches';
+    displayName: 'boxer_match';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    boxers: Attribute.Relation<
+      'api::boxer-match.boxer-match',
+      'manyToMany',
+      'api::boxer.boxer'
+    >;
+    matches: Attribute.Relation<
+      'api::boxer-match.boxer-match',
+      'manyToMany',
+      'api::match.match'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::boxer-match.boxer-match',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::boxer-match.boxer-match',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCategoryCategory extends Schema.CollectionType {
+  collectionName: 'categories';
+  info: {
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Attribute.String & Attribute.Required & Attribute.Unique;
+    status: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::category.category',
       'oneToOne',
       'admin::user'
     > &
@@ -855,6 +930,73 @@ export interface ApiCommentComment extends Schema.CollectionType {
   };
 }
 
+export interface ApiForumForum extends Schema.CollectionType {
+  collectionName: 'forums';
+  info: {
+    singularName: 'forum';
+    pluralName: 'forums';
+    displayName: 'forum';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    status: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::forum.forum',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::forum.forum',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMatchMatch extends Schema.CollectionType {
+  collectionName: 'matches';
+  info: {
+    singularName: 'match';
+    pluralName: 'matches';
+    displayName: 'match';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    status: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    boxer_matches: Attribute.Relation<
+      'api::match.match',
+      'manyToMany',
+      'api::boxer-match.boxer-match'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::match.match',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::match.match',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNewNew extends Schema.CollectionType {
   collectionName: 'news';
   info: {
@@ -878,6 +1020,41 @@ export interface ApiNewNew extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::new.new', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::new.new', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTopicTopic extends Schema.CollectionType {
+  collectionName: 'topics';
+  info: {
+    singularName: 'topic';
+    pluralName: 'topics';
+    displayName: 'topic';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    topic: Attribute.String & Attribute.Required & Attribute.Unique;
+    forum: Attribute.Relation<
+      'api::topic.topic',
+      'oneToOne',
+      'api::forum.forum'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::topic.topic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::topic.topic',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -938,8 +1115,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::boxer.boxer': ApiBoxerBoxer;
+      'api::boxer-match.boxer-match': ApiBoxerMatchBoxerMatch;
+      'api::category.category': ApiCategoryCategory;
       'api::comment.comment': ApiCommentComment;
+      'api::forum.forum': ApiForumForum;
+      'api::match.match': ApiMatchMatch;
       'api::new.new': ApiNewNew;
+      'api::topic.topic': ApiTopicTopic;
       'api::video.video': ApiVideoVideo;
     }
   }

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "boxer_matches",
+  "info": {
+    "singularName": "boxer-match",
+    "pluralName": "boxer-matches",
+    "displayName": "boxer_match"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "boxers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::boxer.boxer",
+      "inversedBy": "boxer_matches"
+    },
+    "matches": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::match.match",
+      "inversedBy": "boxer_matches"
+    }
+  }
+}

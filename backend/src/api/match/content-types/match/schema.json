@@ -1,29 +1,31 @@
 {
   "kind": "collectionType",
-  "collectionName": "boxers",
+  "collectionName": "matches",
   "info": {
-    "singularName": "boxer",
-    "pluralName": "boxers",
-    "displayName": "boxer"
+    "singularName": "match",
+    "pluralName": "matches",
+    "displayName": "match"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
-    "country": {
-      "type": "string",
+    "status": {
+      "type": "boolean",
+      "default": true,
       "required": true
     },
     "boxer_matches": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::boxer-match.boxer-match",
-      "mappedBy": "boxers"
+      "mappedBy": "matches"
     }
   }
 }
