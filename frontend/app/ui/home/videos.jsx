@@ -1,4 +1,4 @@
-import DisplayComponents from '@/app/components/dispComponent'
+import DisplayComponents from '@/app/ui/components/dispComponent'
 import React from 'react'
 
 const Videos = () => {

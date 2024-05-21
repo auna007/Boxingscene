@@ -22,7 +22,7 @@ export const navlists = [
     {
         name: 'RESULT',
         icon: ResultIcon,
-        link: 'result'
+        link: 'results'
     },
     {
         name: 'RANKING',
