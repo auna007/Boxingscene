@@ -1,5 +1,6 @@
 import ArrowRed from '@/public/icons/arrow-right-red.svg';
 import Image from 'next/image';
+import LoadMoreStories from '../ui/components/loadMoreStories';
 
 const Page = () => {
   return (
@@ -13,16 +14,176 @@ const Page = () => {
       </div>
 
       <div className='w-full'>
-        <ul className='w-full'>
-          <li className='flex items-center justify-between pt-4'>
+        <ul className='w-full mt-3'>
+          <li className='flex items-center justify-between pt-4 border-b-2 pb-4'>
             <div>
-              <p className='text-primary-gray text-xs'>FEATURED</p>
-              <p className='font-semibold'>MAY 18</p>
+              <p className='text-primary-gray text-[9px] font-semibold'>FEATURED</p>
+              <p className='font-semibold text-sm'>MAY 18</p>
             </div>
             <p className='text-primary-gray'>Emanuel Navarrete</p>
             <p className='font-semibold'>-VS-</p>
+            <div className='flex flex-col items-center'>
+              <p className='text-primary-red text-[11px] font-semibold'>SPLIT DECISION</p>
+              <p className='font-semibold text-sm'>Denys Berinchyk</p>
+            </div>
+            <Image
+              src={ArrowRed}
+              width={8}
+            />
+          </li>
+          <li className='flex items-center justify-between pt-4 border-b-2 pb-4'>
             <div>
-              <p className='text-primary-red text-xs'>SPLIT DECISION</p>
+              <p className='text-primary-gray text-[9px] font-semibold'>FEATURED</p>
+              <p className='font-semibold text-sm'>MAY 18</p>
+            </div>
+            <p className='text-primary-gray'>Emanuel Navarrete</p>
+            <p className='font-semibold'>-VS-</p>
+            <div className='flex flex-col items-center'>
+              <p className='text-primary-red text-[11px] font-semibold'>SPLIT DECISION</p>
+              <p className='font-semibold text-sm'>Denys Berinchyk</p>
+            </div>
+            <Image
+              src={ArrowRed}
+              width={8}
+            />
+          </li>
+          <li className='flex items-center justify-between pt-4 border-b-2 pb-4'>
+            <div>
+              <p className='text-primary-gray text-[9px] font-semibold'>FEATURED</p>
+              <p className='font-semibold text-sm'>MAY 18</p>
+            </div>
+            <p className='text-primary-gray'>Emanuel Navarrete</p>
+            <p className='font-semibold'>-VS-</p>
+            <div className='flex flex-col items-center'>
+              <p className='text-primary-red text-[11px] font-semibold'>SPLIT DECISION</p>
+              <p className='font-semibold text-sm'>Denys Berinchyk</p>
+            </div>
+            <Image
+              src={ArrowRed}
+              width={8}
+            />
+          </li>
+          <li className='flex items-center justify-between pt-4 border-b-2 pb-4'>
+            <div>
+              <p className='text-primary-gray text-[9px] font-semibold'>FEATURED</p>
+              <p className='font-semibold text-sm'>MAY 18</p>
+            </div>
+            <p className='text-primary-gray'>Emanuel Navarrete</p>
+            <p className='font-semibold'>-VS-</p>
+            <div className='flex flex-col items-center'>
+              <p className='text-primary-red text-[11px] font-semibold'>SPLIT DECISION</p>
+              <p className='font-semibold text-sm'>Denys Berinchyk</p>
+            </div>
+            <Image
+              src={ArrowRed}
+              width={8}
+            />
+          </li>
+          <li className='flex items-center justify-between pt-4 border-b-2 pb-4'>
+            <div>
+              <p className='text-primary-gray text-[9px] font-semibold'>FEATURED</p>
+              <p className='font-semibold text-sm'>MAY 18</p>
+            </div>
+            <p className='text-primary-gray'>Emanuel Navarrete</p>
+            <p className='font-semibold'>-VS-</p>
+            <div className='flex flex-col items-center'>
+              <p className='text-primary-red text-[11px] font-semibold'>SPLIT DECISION</p>
+              <p className='font-semibold text-sm'>Denys Berinchyk</p>
+            </div>
+            <Image
+              src={ArrowRed}
+              width={8}
+            />
+          </li>
+          <li className='flex items-center justify-between pt-4 border-b-2 pb-4'>
+            <div>
+              <p className='text-primary-gray text-[9px] font-semibold'>FEATURED</p>
+              <p className='font-semibold text-sm'>MAY 18</p>
+            </div>
+            <p className='text-primary-gray'>Emanuel Navarrete</p>
+            <p className='font-semibold'>-VS-</p>
+            <div className='flex flex-col items-center'>
+              <p className='text-primary-red text-[11px] font-semibold'>SPLIT DECISION</p>
+              <p className='font-semibold text-sm'>Denys Berinchyk</p>
+            </div>
+            <Image
+              src={ArrowRed}
+              width={8}
+            />
+          </li>
+          <li className='flex items-center justify-between pt-4 border-b-2 pb-4'>
+            <div>
+              <p className='text-primary-gray text-[9px] font-semibold'>FEATURED</p>
+              <p className='font-semibold text-sm'>MAY 18</p>
+            </div>
+            <p className='text-primary-gray'>Emanuel Navarrete</p>
+            <p className='font-semibold'>-VS-</p>
+            <div className='flex flex-col items-center'>
+              <p className='text-primary-red text-[11px] font-semibold'>SPLIT DECISION</p>
+              <p className='font-semibold text-sm'>Denys Berinchyk</p>
+            </div>
+            <Image
+              src={ArrowRed}
+              width={8}
+            />
+          </li>
+          <li className='flex items-center justify-between pt-4 border-b-2 pb-4'>
+            <div>
+              <p className='text-primary-gray text-[9px] font-semibold'>FEATURED</p>
+              <p className='font-semibold text-sm'>MAY 18</p>
+            </div>
+            <p className='text-primary-gray'>Emanuel Navarrete</p>
+            <p className='font-semibold'>-VS-</p>
+            <div className='flex flex-col items-center'>
+              <p className='text-primary-red text-[11px] font-semibold'>SPLIT DECISION</p>
+              <p className='font-semibold text-sm'>Denys Berinchyk</p>
+            </div>
+            <Image
+              src={ArrowRed}
+              width={8}
+            />
+          </li>
+          <li className='flex items-center justify-between pt-4 border-b-2 pb-4'>
+            <div>
+              <p className='text-primary-gray text-[9px] font-semibold'>FEATURED</p>
+              <p className='font-semibold text-sm'>MAY 18</p>
+            </div>
+            <p className='text-primary-gray'>Emanuel Navarrete</p>
+            <p className='font-semibold'>-VS-</p>
+            <div className='flex flex-col items-center'>
+              <p className='text-primary-red text-[11px] font-semibold'>SPLIT DECISION</p>
+              <p className='font-semibold text-sm'>Denys Berinchyk</p>
+            </div>
+            <Image
+              src={ArrowRed}
+              width={8}
+            />
+          </li>
+          <li className='flex items-center justify-between pt-4 border-b-2 pb-4'>
+            <div>
+              <p className='text-primary-gray text-[9px] font-semibold'>FEATURED</p>
+              <p className='font-semibold text-sm'>MAY 18</p>
+            </div>
+            <p className='text-primary-gray'>Emanuel Navarrete</p>
+            <p className='font-semibold'>-VS-</p>
+            <div className='flex flex-col items-center'>
+              <p className='text-primary-red text-[11px] font-semibold'>SPLIT DECISION</p>
+              <p className='font-semibold text-sm'>Denys Berinchyk</p>
+            </div>
+            <Image
+              src={ArrowRed}
+              width={8}
+            />
+          </li>
+          <li className='flex items-center justify-between pt-4 border-b-2 pb-4'>
+            <div>
+              <p className='text-primary-gray text-[9px] font-semibold'>FEATURED</p>
+              <p className='font-semibold text-sm'>MAY 18</p>
+            </div>
+            <p className='text-primary-gray'>Emanuel Navarrete</p>
+            <p className='font-semibold'>-VS-</p>
+            <div className='flex flex-col items-center'>
+              <p className='text-primary-red text-[11px] font-semibold'>SPLIT DECISION</p>
               <p className='font-semibold text-sm'>Denys Berinchyk</p>
             </div>
             <Image
@@ -32,6 +193,9 @@ const Page = () => {
           </li>
         </ul>
       </div>
+
+      <LoadMoreStories />
+
     </main>
   )
 }

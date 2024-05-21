@@ -1,10 +1,10 @@
 import React from 'react'
 import UserIcon from '@/public/icons/user-red.svg';
-import ArrowDown from '@/public/icons/arrow-down.svg';
 import ArrowRed from '@/public/icons/arrow-right-red.svg';
 import FeaturedFightOne from '@/public/images/featured-fight-1.png';
 import FeaturedFightTwo from '@/public/images/featured-fight-2.png';
 import Image from 'next/image';
+import LoadMoreStories from '../components/loadMoreStories';
 
 const NewsFeed = () => {
     return (
@@ -56,7 +56,9 @@ const NewsFeed = () => {
                             <p className='text-primary-gray text-xs mt-2'>1 hr ago</p>
                         </li>
                     </ul>
-                    <h3 className='flex justify-center items-center gap-2 cursor-pointer font-semibold text-sm w-full border-b-2 py-5 border-black'>LOAD MORE STORIES <Image src={ArrowDown} /></h3>
+                    
+                    <LoadMoreStories />
+
                 </div>
                 <div className='basis-[35%] border-l-2 pl-6'>
                     <div className='flex items-center justify-between'>
