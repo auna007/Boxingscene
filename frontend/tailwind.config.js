@@ -10,6 +10,13 @@ module.exports = {
       colors: {
         "primary-red": "#FF3939",
         "primary-gray": "#979797"
+      },
+      screens: {
+        "mobile": "340px",
+        "tablet": "640px",
+        "laptop": "1024px",
+        "desktop": "1400px",
+        "large-screens": "1600px"
       }
     },
   },

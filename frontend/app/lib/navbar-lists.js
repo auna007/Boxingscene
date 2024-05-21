@@ -42,7 +42,7 @@ export const navlists = [
     {
         name: 'SEARCH',
         icon: SearchIcon,
-        link: 'news'
+        link: 'search'
     },
     {
         name: 'SIGN IN/LOGIN',

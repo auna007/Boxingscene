@@ -5,6 +5,7 @@ import FeaturedFightOne from '@/public/images/featured-fight-1.png';
 import FeaturedFightTwo from '@/public/images/featured-fight-2.png';
 import Image from 'next/image';
 import LoadMoreStories from '../components/loadMoreStories';
+import Link from 'next/link';
 
 const NewsFeed = () => {
     return (
@@ -12,7 +13,7 @@ const NewsFeed = () => {
             <div className='border-t-2 border-primary-gray mb-4'></div>
             <div className='flex gap-10 w-full'>
                 <div className='basis-[60%]'>
-                    <h2 className='font-semibold text-primary-red mb-10'>NEWS FEED</h2>
+                    <Link href='/news'><h2 className='font-semibold text-primary-red hover:text-primary-gray transition-colors ease duration-500 mb-10'>NEWS FEED</h2></Link>
 
                     <ul className='flex flex-col gap-y-6'>
                         <li className='c-border'>

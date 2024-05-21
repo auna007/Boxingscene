@@ -1,6 +1,7 @@
 import VideoC from '@/public/icons/video-c.svg'
 import Image from 'next/image'
 import Photo from '@/public/images/feature-image.jpg'
+import LoadMoreStories from './loadMoreStories'
 
 const Latest = () => {
     return (
@@ -25,6 +26,7 @@ const Latest = () => {
                         </li>
                     ))}
                 </ul>
+                <LoadMoreStories />
             </div>
         </section>
     )
