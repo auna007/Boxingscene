@@ -44,3 +44,7 @@ button, input, textarea{
 .c-height{
     height: calc(100vh - 200px);
 }
+
+.c-width{
+    width: calc(100vw / 4);
+}

@@ -9,7 +9,7 @@ import Videos from "./ui/home/videos";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="overflow-x-hidden">
 
       <main className="grid grid-cols-1 tablet:grid-cols-2 gap-7 mt-10 laptop:px-20 tablet:px-16 px-8 py-7">
         <div>
@@ -33,9 +33,6 @@ export default function Home() {
       </main>
 
       <NewsFeed />
-      <div className="laptop:px-20 tablet:px-16 px-8 mt-4">
-        <div className='w-full border-t-2 border-primary-gray'></div>
-      </div>
       <Photos />
       <Videos />
 
