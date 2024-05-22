@@ -4,24 +4,33 @@
   "info": {
     "singularName": "boxer-match",
     "pluralName": "boxer-matches",
-    "displayName": "boxer_match"
+    "displayName": "boxer_match",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "boxers": {
+    "boxer_1": {
       "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::boxer.boxer",
-      "inversedBy": "boxer_matches"
+      "relation": "oneToOne",
+      "target": "api::boxer.boxer"
     },
-    "matches": {
+    "boxer_2": {
       "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::match.match",
-      "inversedBy": "boxer_matches"
+      "relation": "oneToOne",
+      "target": "api::boxer.boxer"
+    },
+    "match": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::match.match"
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
