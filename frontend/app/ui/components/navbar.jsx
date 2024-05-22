@@ -51,7 +51,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Screen */}
-            <div className={`fixed top-[200px] bg-white ${isNavbarOpen ? 'left-0' : 'left-[-100%]'} w-full c-height transition-[left] ease duration-300 overflow-y-scroll`}>
+            <div className={`fixed top-[200px] bg-white ${isNavbarOpen ? 'left-0' : 'left-[-100%]'} w-full c-height transition-[left] ease duration-300 overflow-y-scroll z-[100]`}>
                 <div className="flex items-center justify-center gap-5 py-8 border-b border-[#686767]">
                     <Image src={Search} alt="search-icon" />
                     <input type="text" placeholder="Search BoxScene" className="border-0 text-lg" />

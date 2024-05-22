@@ -5,27 +5,27 @@ import ThickBorder from '../components/thickBorder'
 
 const CompleteCoverage = () => {
     return (
-        <section className='mt-7'>
+        <section className='mt-7 min-w-full'>
             <h2 className='text-primary-red font-semibold'>COMPLETE COVERAGE</h2>
 
-            <ul className='mt-10 grid grid-cols-4 gap-5 border-b border-black pb-6'>
+            <ul className='mt-10 w-full flex gap-4 overflow-x-scroll laptop:overflow-x-visible border-b border-black pb-6'>
                 {[1,2,3,4].map((_, index) => (
-                    <li className='coverage-border-not-last-child pr-5'>
+                    <li key={index} className='coverage-border-not-last-child pr-5 c-width min-w-[250px] laptop:min-w-[200px]'>
                         <div className='flex items-center justify-between gap-1 pb-3'>
                             <p className='font-semibold text-lg'>Tyson Fury</p>
                             <Image
                                 src={ArrowRed}
-                                width={8}
+                                width={20}
                             />
                         </div>
                         <div>
                             <Image src={Photo} />
                         </div>
 
-                        <div>
-                            <p className='fights-border-not-last-child pt-4 pb-3 font-semibold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, obcaecati similique. Quibusdam, ipsa!</p>
-                            <p className='fights-border-not-last-child pt-4 pb-3 font-semibold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, obcaecati similique. Quibusdam, ipsa!</p>
-                            <p className='fights-border-not-last-child pt-4 pb-3 font-semibold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, obcaecati similique. Quibusdam, ipsa!</p>
+                        <div className='fights-border-not-last-child'>
+                            <p className='pt-4 pb-3 font-semibold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, obcaecati similique. Quibusdam, ipsa!</p>
+                            <p className='pt-4 pb-3 font-semibold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, obcaecati similique. Quibusdam, ipsa!</p>
+                            <p className='pt-4 pb-3 font-semibold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, obcaecati similique. Quibusdam, ipsa!</p>
                         </div>
                     </li>
                 ))}

@@ -9,9 +9,9 @@ import Latest from '../ui/components/latest'
 
 const Page = () => {
     return (
-        <main>
+        <main className='overflow-x-hidden'>
             <section className='mt-8'>
-                <div className='min-h-[600px] grid grid-cols-2 gap-5 mt-6 border-b-2 border-black pb-8'>
+                <div className='min-h-[600px] grid grid-cols-1 tablet-small:grid-cols-2 gap-5 mt-6 border-b-2 border-black pb-8'>
                     <div className='h-full border-r border-[#d9d9d9] pr-5'>
                         <div className='w-full relative parent-hover cursor-pointer'>
                             <div>
@@ -27,12 +27,12 @@ const Page = () => {
                                 <Image src={VideoC} className='w-[15px]' />
                                 <p>VIDEOS</p>
                             </div>
-                            <h1 className='mt-3 text-4xl font-semibold'>Video: Conor Benn Discusses Decision Win Over Peter Dobson</h1>
+                            <h1 className='mt-3 text-2xl tablet:text-4xl font-semibold'>Video: Conor Benn Discusses Decision Win Over Peter Dobson</h1>
                             <p className='mt-3'>Video by Ryan Burton - Conor Benn Interview - Las Vegas - In a junior middleweight contest, Conor Benn (23-0, 14 KOs) was tested in winning a tough twelve round unanimous decision over a game Peter Dobson (16-1, 9 KOs).</p>
 
                             <Link href="feature" className="flex items-center gap-4 mt-10">
                                 <h3 className="text-xl font-semibold">READ MORE</h3>
-                                <Image src={ArrowRed} width={8} />
+                                <Image src={ArrowRed} width={20} />
                             </Link>
                         </div>
                             
@@ -41,7 +41,7 @@ const Page = () => {
 
                     <ul className='flex flex-col gap-5'>
                         {[1,2,3].map(() => (
-                            <li className='flex items-center justify-between pb-4 fights-border-not-last-child'>
+                            <li className='flex items-center justify-between pb-4 feature-border-not-last-child'>
                                 <div>
                                     <div className='flex items-center gap-2 text-primary-gray font-semibold text-xs'>
                                         <Image src={VideoC} className='w-[15px]' />

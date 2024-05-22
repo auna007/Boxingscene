@@ -17,7 +17,7 @@ const ScoreCard = () => {
                     <Image src ={FighterPlaceHolder} className='w-[48%]' />
                 </div>
 
-                <div className='winner bg-[#ff0022] px-5 py-1 text-white mt-3 w-[38%] text-center font-bold text-sm'>
+                <div className='winner bg-[#ff0022] px-5 py-1 text-white mt-5 w-[100px] text-center font-bold text-xs tablet:text-sm'>
                     <p class="straight-text">WINNER</p>
                     </div>
 
@@ -28,10 +28,10 @@ const ScoreCard = () => {
 
             <div className='w-full border-t border-[#d9d9d9] p-5'>
                 <div className='flex items-center gap-3'>
-                    <p className='font-semibold uppercase'>Full Scorecard</p>
+                    <p className='font-semibold uppercase text-sm'>Full Scorecard</p>
                     <Image
                         src={ArrowRed}
-                        width={8}
+                        width={20}
                     />
                 </div>
             </div>

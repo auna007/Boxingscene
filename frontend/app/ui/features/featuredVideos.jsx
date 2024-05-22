@@ -9,7 +9,7 @@ const FeaturedVideos = () => {
             <div className='mt-6'>
                 <div>
                     <h2 className='font-semibold text-xl'>Saul 'Canelo' Alvarez</h2>
-                    <div className='grid grid-cols-4 gap-5 mt-3 border-b border-black pb-3'>
+                    <div className='w-full flex gap-4 overflow-x-scroll laptop:overflow-x-visible mt-3 border-b border-black pb-3'>
                         <FeatureVideoCard />
                         <FeatureVideoCard />
                         <FeatureVideoCard />
@@ -18,7 +18,7 @@ const FeaturedVideos = () => {
                 </div>
                 <div className='mt-7'>
                     <h2 className='font-semibold text-xl'>Saul 'Canelo' Alvarez</h2>
-                    <div className='grid grid-cols-4 gap-5 mt-3 pb-3'>
+                    <div className='w-full flex gap-4 overflow-x-scroll laptop:overflow-x-visible mt-3 pb-3'>
                         <FeatureVideoCard />
                         <FeatureVideoCard />
                         <FeatureVideoCard />

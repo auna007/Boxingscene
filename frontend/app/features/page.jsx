@@ -9,10 +9,10 @@ import ThickBorder from '../ui/components/thickBorder'
 
 const Page = () => {
   return (
-    <main>
+    <main className='overflow-x-hidden'>
       <section className='mt-8'>
         <h2 className='text-primary-red font-semibold'>NEWSROOM</h2>
-        <div className='grid grid-cols-2 gap-5 mt-6 border-b-2 border-black pb-2'>
+        <div className='grid grid-cols-1 tablet:grid-cols-2 gap-5 mt-6 border-b-2 border-black pb-2'>
           <div>
             <Image src={Photo} />
           </div>
@@ -21,17 +21,17 @@ const Page = () => {
               <p className='font-semibold uppercase text-3xl'>Fury vs. Usyk</p>
               <Image
                 src={ArrowRed}
-                width={8}
+                width={20}
               />
             </div>
-            <ul className='flex flex-col gap-y-4'>
-              <li className='border-b border-[#d9d9d9] py-4 leading-6 font-semibold text-xl'>
+            <ul className='flex flex-col gap-y-4 text-lg laptop:text-xl'>
+              <li className='border-b border-[#d9d9d9] py-3 laptop:py-4 leading-6 font-semibold'>
                 Warren Confirms Fury Wants To Go Back In With Usyk And Will Enforce Rematch
               </li>
-              <li className='border-b border-[#d9d9d9] py-4 leading-6 font-semibold text-xl'>
+              <li className='border-b border-[#d9d9d9] py-3 laptop:py-4 leading-6 font-semibold'>
                 Warren Confirms Fury Wants To Go Back In With Usyk And Will Enforce Rematch
               </li>
-              <li className='border-b border-[#d9d9d9] py-4 leading-6 font-semibold text-xl'>
+              <li className='border-b border-[#d9d9d9] py-3 laptop:py-4 leading-6 font-semibold'>
                 Warren Confirms Fury Wants To Go Back In With Usyk And Will Enforce Rematch
               </li>
             </ul>

@@ -6,16 +6,18 @@ import ThickBorder from '../components/thickBorder'
 
 const NewsFeatures = () => {
     return (
-        <section className='flex justify-between mt-7'>
+        <section className='laptop:flex justify-between mt-7'>
             <div className='basis-[65%] border-r border-[#d9d9d9] pr-6'>
                 <h2 className='text-primary-red font-semibold'>NEWS FEATURES</h2>
                 <ul className='flex flex-col gap-y-4'>
                     {[1,2,3,4,5].map((_, index) => (
-                        <li className='fights-border-not-last-child flex items-center gap-8 mt-6 pb-5'>
+                        <li key={index} className='feature-border-not-last-child flex items-center gap-8 tablet:mt-6 pb-5'>
                             <div>
-                                <h2 className='font-semibold text-2xl mb-2'>The Greatest Hits Of Oleksandr Usyk</h2>
-                                <p>Matt Christie revisits the undisputed heavyweight champion Oleksandr Usyk's best..</p>
-                                <small className='text-primary-gray mt-2'>23h ago</small>
+                                <h2 className='font-semibold text-lg tablet:text-2xl mb-2'>The Greatest Hits Of Oleksandr Usyk</h2>
+                                <div className='hidden tablet:block'>
+                                    <p className='pb-3'>Matt Christie revisits the undisputed heavyweight champion Oleksandr Usyk's best..</p>
+                                    <small className='text-primary-gray mt-2'>23h ago</small>
+                                </div>
                             </div>
                             <div className='w-[180px]'>
                                 <Image src={FeatureImage} className='w-full' />
@@ -31,11 +33,13 @@ const NewsFeatures = () => {
                 <h2 className='text-primary-red font-semibold mt-4'>WORLD NEWS</h2>
                 <ul className='flex flex-col gap-y-4'>
                     {[1,2,3,4,5].map((_, index) => (
-                        <li className='fights-border-not-last-child flex items-center gap-8 mt-6 pb-5'>
+                        <li key={index} className='feature-border-not-last-child flex items-center gap-8 tablet:mt-6 pb-5'>
                             <div>
-                                <h2 className='font-semibold text-2xl mb-2'>The Greatest Hits Of Oleksandr Usyk</h2>
-                                <p>Matt Christie revisits the undisputed heavyweight champion Oleksandr Usyk's best..</p>
-                                <small className='text-primary-gray mt-2'>23h ago</small>
+                                <h2 className='font-semibold text-lg tablet:text-2xl mb-2'>The Greatest Hits Of Oleksandr Usyk</h2>
+                                <div className='hidden tablet:block'>
+                                    <p className='pb-3'>Matt Christie revisits the undisputed heavyweight champion Oleksandr Usyk's best..</p>
+                                    <small className='text-primary-gray mt-2'>23h ago</small>
+                                </div>
                             </div>
                             <div className='w-[180px]'>
                                 <Image src={FeatureImage} className='w-full' />

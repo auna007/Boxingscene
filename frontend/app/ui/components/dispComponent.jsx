@@ -4,7 +4,7 @@ import CommentIcon from '@/public/icons/comment.svg'
 
 const DisplayComponents = ({title}) => {
     return (
-        <section className='mt-5 laptop:px-20 tablet:px-16 px-8 pb-5 min-w-screen'>
+        <section className='mt-5 laptop:px-20 tablet:px-16 px-8 pb-5 min-w-full'>
             
             <div className='w-full border-b border-t border-black'>
                 <h2 className='font-semibold text-primary-red mb-5 mt-3 uppercase'>{title}</h2>
