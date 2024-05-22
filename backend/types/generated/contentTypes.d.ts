@@ -898,73 +898,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
-export interface ApiCommentComment extends Schema.CollectionType {
-  collectionName: 'comments';
-  info: {
-    singularName: 'comment';
-    pluralName: 'comments';
-    displayName: 'comment';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    comment: Attribute.Text & Attribute.Required;
-    video: Attribute.Relation<
-      'api::comment.comment',
-      'manyToOne',
-      'api::video.video'
-    >;
-    new: Attribute.Relation<'api::comment.comment', 'oneToOne', 'api::new.new'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::comment.comment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::comment.comment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiForumForum extends Schema.CollectionType {
-  collectionName: 'forums';
-  info: {
-    singularName: 'forum';
-    pluralName: 'forums';
-    displayName: 'forum';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required & Attribute.Unique;
-    status: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::forum.forum',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::forum.forum',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiMatchMatch extends Schema.CollectionType {
   collectionName: 'matches';
   info: {
@@ -1002,7 +935,7 @@ export interface ApiNewNew extends Schema.CollectionType {
   info: {
     singularName: 'new';
     pluralName: 'news';
-    displayName: 'New';
+    displayName: 'News';
     description: '';
   };
   options: {
@@ -1026,84 +959,6 @@ export interface ApiNewNew extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::new.new', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::new.new', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiTopicTopic extends Schema.CollectionType {
-  collectionName: 'topics';
-  info: {
-    singularName: 'topic';
-    pluralName: 'topics';
-    displayName: 'topic';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    topic: Attribute.String & Attribute.Required & Attribute.Unique;
-    forum: Attribute.Relation<
-      'api::topic.topic',
-      'oneToOne',
-      'api::forum.forum'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::topic.topic',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::topic.topic',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiVideoVideo extends Schema.CollectionType {
-  collectionName: 'videos';
-  info: {
-    singularName: 'video';
-    pluralName: 'videos';
-    displayName: 'video';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetMinMaxLength<{
-        maxLength: 255;
-      }>;
-    description: Attribute.Text & Attribute.Required;
-    url: Attribute.String & Attribute.Required;
-    comments: Attribute.Relation<
-      'api::video.video',
-      'oneToMany',
-      'api::comment.comment'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::video.video',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::video.video',
-      'oneToOne',
-      'admin::user'
-    > &
       Attribute.Private;
   };
 }
@@ -1174,12 +1029,8 @@ declare module '@strapi/types' {
       'api::boxer.boxer': ApiBoxerBoxer;
       'api::boxer-match.boxer-match': ApiBoxerMatchBoxerMatch;
       'api::category.category': ApiCategoryCategory;
-      'api::comment.comment': ApiCommentComment;
-      'api::forum.forum': ApiForumForum;
       'api::match.match': ApiMatchMatch;
       'api::new.new': ApiNewNew;
-      'api::topic.topic': ApiTopicTopic;
-      'api::video.video': ApiVideoVideo;
       'api::welcome-note.welcome-note': ApiWelcomeNoteWelcomeNote;
     }
   }
