@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 
+button, input, textarea{
+    outline: none;
+}
+
+
 .c-shadow{
     box-shadow: -10px -10px 4px 4px #cccccc54;
 }
@@ -34,4 +39,8 @@
 
 .child-hover{
     transition: transform 0.3s ease;
+}
+
+.c-height{
+    height: calc(100vh - 200px);
 }
