@@ -7,13 +7,13 @@ import LoadMoreStories from '../ui/components/loadMoreStories'
 
 const Page = () => {
     return (
-        <main className='w-full flex justify-between pt-10'>
+        <main className='w-full tablet:flex justify-between pt-10'>
             <div className='basis-[55%]'>
                 <div className='flex items-center gap-2'>
-                    <Image src={NewsIcon} />
+                    <Image src={NewsIcon} width={15} />
                     <h2 className='text-primary-gray'>NEWS</h2>
                 </div>
-                <h1 className='mt-3 text-4xl font-semibold leading-snug'>Berinchyk Open To Fights With Shakur, Keyshawn And Muratalla</h1>
+                <h1 className='mt-3 text-2xl tablet:text-4xl font-semibold leading-snug'>Berinchyk Open To Fights With Shakur, Keyshawn And Muratalla</h1>
                 <div className='mt-3'>
                     <Image src={NewsImage} />
                 </div>
@@ -28,7 +28,7 @@ const Page = () => {
                     <h2 className='font-semibold'>TAGS</h2>
                 </div>
 
-                <ul className='flex items-center gap-3 mt-3 border-b-2 border-[#7e7d7d] pb-8'>
+                <ul className='flex items-center gap-3 mt-3 border-b-2 border-[#7e7d7d] pb-8 text-xs'>
                     <li className='border-2 p-2 text-primary-gray font-semibold cursor-pointer'>TOP RANK</li>
                     <li className='border-2 p-2 text-primary-gray font-semibold cursor-pointer'>TOP RANK</li>
                     <li className='border-2 p-2 text-primary-gray font-semibold cursor-pointer'>TOP RANK</li>

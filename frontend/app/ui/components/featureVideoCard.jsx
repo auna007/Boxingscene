@@ -6,7 +6,7 @@ import Image from 'next/image'
 const FeatureVideoCard = () => {
     return (
         <div>
-            <div className='w-full h-[200px] relative parent-hover cursor-pointer'>
+            <div className='c-width min-w-[250px] laptop:min-w-[100px] h-[200px] relative parent-hover cursor-pointer'>
                 <div>
                     <Image src={Featureimage} className='w-full object-cover' />
                 </div>

@@ -20,7 +20,7 @@ const Navbar = () => {
 
     return (
         <header className='w-full h-[200px]'>
-            <div className="fixed top-0 bg-[#F7F7F7] h-[100px] w-full z-[100000]"></div>
+            <div className="fixed top-0 bg-[#F7F7F7] h-[110px] w-full z-[100000]"></div>
             <div className="fixed left-0 top-[100px] w-full h-[100px] flex gap-x-4 items-center justify-between laptop:px-20 tablet:px-16 px-8 py-7 border-b-2 border-black z-[100] bg-white c-shadow">
                 <div className="block laptop:hidden select-none cursor-pointer" onClick={() => setIsNavbarOpen(prev => !prev)}>
                     <Image src={isNavbarOpen ? MenuClose : Menu} />
@@ -51,7 +51,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Screen */}
-            <div className={`fixed top-[200px] bg-white ${isNavbarOpen ? 'left-0' : 'left-[-100%]'} w-full c-height transition-[left] ease duration-300 overflow-y-scroll`}>
+            <div className={`fixed top-[200px] bg-white ${isNavbarOpen ? 'left-0' : 'left-[-100%]'} w-full c-height transition-[left] ease duration-300 overflow-y-scroll z-[100]`}>
                 <div className="flex items-center justify-center gap-5 py-8 border-b border-[#686767]">
                     <Image src={Search} alt="search-icon" />
                     <input type="text" placeholder="Search BoxScene" className="border-0 text-lg" />

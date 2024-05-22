@@ -15,9 +15,9 @@ const Footer = () => {
 
     return (
         <footer className='w-full min-h-60 grid grid-cols-1 laptop:grid-cols-4 gap-y-5 laptop:gap-y-1 mt-10 border-t border-black laptop:px-20 tablet:px-16 px-8 pt-8 text-sm pb-5'>
-            <div className={`border-b laptop:border-0 border-[#d9d9d9] pb-4 transitio-[height] ease duration-500 ${legal ? 'h-[100px]' : 'h-[40px]'} laptop:h-[100px] overflow-y-hidden`}>
-                <div className='flex items-center justify-between h-[40px]' onClick={() => setLegal(prev => !prev)}>
-                    <h3 className='font-semibold text-lg text underline cursor-pointer'>LEGAL</h3>
+            <div className={`border-b laptop:border-0 border-[#d9d9d9] pb-4 transition-[height] ease duration-500 ${legal ? 'h-[100px]' : 'h-[40px]'} laptop:h-[100px] overflow-y-hidden`}>
+                <div className='flex items-center justify-between h-[40px] cursor-pointer' onClick={() => setLegal(prev => !prev)}>
+                    <h3 className='font-semibold text-lg text underline'>LEGAL</h3>
                     <div className='block laptop:hidden'>
                         <Image src={ArrowDown} alt='arrow-down' />
                     </div>
@@ -26,7 +26,7 @@ const Footer = () => {
                 <p className='text-primary-gray'>Terms of Use</p>
                 <p className='text-primary-gray'>Cookie Policy</p>
             </div>
-            <div className={`border-b laptop:border-0 border-[#d9d9d9] pb-4 transitio-[height] ease duration-500 ${getInTouch ? 'h-[100px]' : 'h-[40px]'} laptop:h-[100px] overflow-y-hidden`}>
+            <div className={`border-b laptop:border-0 border-[#d9d9d9] pb-4 transition-[height] ease duration-500 ${getInTouch ? 'h-[100px]' : 'h-[40px]'} laptop:h-[100px] overflow-y-hidden`}>
             <   div className='flex items-center justify-between h-[40px] cursor-pointer' onClick={() => setGetInTouch(prev => !prev)}>
                     <h3 className='font-semibold text-lg text underline'>GET IN TOUCH</h3>
                     <div className='block laptop:hidden'>
@@ -36,7 +36,7 @@ const Footer = () => {
                 <p className='text-primary-gray'>Contact Us</p>
                 <p className='text-primary-gray'>Submit News</p>
             </div>
-            <div className={`border-b laptop:border-0 border-[#d9d9d9] pb-4 transitio-[height] ease duration-500 ${whoWeAre ? 'h-[100px]' : 'h-[40px]'} laptop:h-[100px] overflow-y-hidden`}>
+            <div className={`border-b laptop:border-0 border-[#d9d9d9] pb-4 transition-[height] ease duration-500 ${whoWeAre ? 'h-[100px]' : 'h-[40px]'} laptop:h-[100px] overflow-y-hidden`}>
                 <div className='flex items-center justify-between h-[40px]' onClick={() => setWhoWeAre(prev => !prev)}>
                     <h3 className='font-semibold text-lg text underline cursor-pointer'>WHO WE ARE</h3>
                     <div className='block laptop:hidden'>

@@ -21,7 +21,14 @@ button, input, textarea{
     border-right: 1px solid black;
 }
 
-.fights-border-not-last-child:not(:last-child){
+.c-not-last-child-border p:not(:last-child){
+    border-right: 1px solid black;
+}
+
+.fights-border-not-last-child p:not(:last-child){
+    border-bottom: 1px solid black;
+}
+.feature-border-not-last-child:not(:last-child){
     border-bottom: 1px solid black;
 }
 
