@@ -8,9 +8,11 @@ This project is a prototype demo version of a boxing scene website which include
 To run the program do the following:
 1. Unzip the folder
 2. navigatte to the backend directory and start the backend server using the below command
-run command: npm run developer 
+run command : npm install
+run command : npm run developer 
 3. navigatte to the frontend directory and start the frontend server using the below command
-run command: npm run dev 
+run command : npm install
+run command : npm run dev 
 
 Access both frontend and backend via your browser using http://localhost:3000 and http://localhost:1337/admin/auth/login respectively.
 
