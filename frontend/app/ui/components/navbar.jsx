@@ -61,7 +61,7 @@ const Navbar = () => {
                         <li className={`${list.link === 'login' ? 'border-t border-black mt-3 pt-6' : ''} px-8`}>
                             {
                                 list.link === 'ranking' || list.link === 'login' ? (
-                                    <div className="flex items-center gap-6 relative">
+                                    <div className="flex items-center gap-6 relative" onClick={() => setShowRankingBox(prev => !prev)}>
                                         <div>
                                             <div className="flex items-center gap-2">
                                                 <Image
@@ -74,7 +74,7 @@ const Navbar = () => {
                                                 </div>
                                             </div>
                                             {list.link === 'ranking' && (
-                                                <ul className={`${showRankingBox === true ? 'h-[100px] pl-16 pt-5' : 'h-0'} overflow-y-hidden flex flex-col gap-3`} onClick={() => setShowRankingBox(prev => !prev)}>
+                                                <ul className={`${showRankingBox === true ? 'h-[120px] pt-5' : 'h-0'} duration-500 ease transition-all pl-16 overflow-y-hidden flex flex-col gap-3`}>
                                                     <li>OFFICIAL RANKING</li>
                                                     <li>CHAMPIONS</li>
                                                     <li>POUND-FOR-POUND</li>

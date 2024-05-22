@@ -9,9 +9,9 @@ import Link from 'next/link';
 
 const NewsFeed = () => {
     return (
-        <div className='mt-6 px-20 pb-10'>
+        <div className='mt-6 laptop:px-20 tablet:px-16 px-8 pb-10'>
             <div className='border-t-2 border-primary-gray mb-4'></div>
-            <div className='flex gap-10 w-full'>
+            <div className='block tablet:flex gap-10 w-full'>
                 <div className='basis-[60%]'>
                     <Link href='/news'><h2 className='font-semibold text-primary-red hover:text-primary-gray transition-colors ease duration-500 mb-10'>NEWS FEED</h2></Link>
 
@@ -61,7 +61,7 @@ const NewsFeed = () => {
                     <LoadMoreStories />
 
                 </div>
-                <div className='basis-[35%] border-l-2 pl-6'>
+                <div className='basis-[35%] tablet:border-l-2 tablet:pl-6 mt-8 tablet:mt-0'>
                     <div className='flex items-center justify-between'>
                         <h3 className='text-primary-red font-semibold'>FEATURED FIGHT</h3>
                         <div className='flex items-center justify-between gap-1'>
@@ -73,9 +73,9 @@ const NewsFeed = () => {
                         </div>
                     </div>
 
-                    <div className='grid grid-cols-2 gap-4 mt-5'>
-                        <Image src={FeaturedFightOne} />
-                        <Image src={FeaturedFightTwo} />
+                    <div className='flex justify-between gap-4 mt-5'>
+                        <Image src={FeaturedFightOne} className='w-1/2' />
+                        <Image src={FeaturedFightTwo} className='w-1/2' />
                     </div>
 
                     <div>
@@ -84,41 +84,36 @@ const NewsFeed = () => {
                             <p className='font-semibold text-sm'>FULL SCHEDULE</p>
                             <Image
                                 src={ArrowRed}
-                                width={5}
+                                width={20}
                             />
                         </div>
                         
                         <h3 className='text-primary-red font-semibold mt-6'>TRENDING TOPIC</h3>
 
                         <ul className='flex flex-col gap-3 mt-8'>
-                            <li className='border-b-2 pb-3'>
+                            <li className='pb-3'>
                                 <div className='flex items-center justify-between gap-1'>
-                                    <p className='font-semibold text-sm'>Tyson Fury</p>
+                                    <p className='font-semibold text-lg'>Tyson Fury</p>
                                     <Image
                                         src={ArrowRed}
-                                        width={5}
+                                        width={20}
                                     />
                                 </div>
+                                <p className='text-primary-gray text-sm mt-3 border-b border-[#d9d9d9] pb-4'>Lorem ipsum dolor sit amet consectetur. Tortor morbi fermentum orci bibendum. Vestibulum.</p>
                                 <p className='text-primary-gray text-sm mt-3'>Lorem ipsum dolor sit amet consectetur. Tortor morbi fermentum orci bibendum. Vestibulum.</p>
                             </li>
-                            <li className='border-b-2 pb-3'>
+                        </ul>
+                        <div className='w-full border border-black my-3'></div>
+                        <ul className='flex flex-col gap-3 mt-8'>
+                            <li className='pb-3'>
                                 <div className='flex items-center justify-between gap-1'>
-                                    <p className='font-semibold text-sm'>Tyson Fury</p>
+                                    <p className='font-semibold text-lg'>Tyson Fury</p>
                                     <Image
                                         src={ArrowRed}
-                                        width={5}
+                                        width={20}
                                     />
                                 </div>
-                                <p className='text-primary-gray text-sm mt-3'>Lorem ipsum dolor sit amet consectetur. Tortor morbi fermentum orci bibendum. Vestibulum.</p>
-                            </li>
-                            <li className='border-b-2 pb-3'>
-                                <div className='flex items-center justify-between gap-1'>
-                                    <p className='font-semibold text-sm'>Tyson Fury</p>
-                                    <Image
-                                        src={ArrowRed}
-                                        width={5}
-                                    />
-                                </div>
+                                <p className='text-primary-gray text-sm mt-3 border-b border-[#d9d9d9] pb-4'>Lorem ipsum dolor sit amet consectetur. Tortor morbi fermentum orci bibendum. Vestibulum.</p>
                                 <p className='text-primary-gray text-sm mt-3'>Lorem ipsum dolor sit amet consectetur. Tortor morbi fermentum orci bibendum. Vestibulum.</p>
                             </li>
                         </ul>
