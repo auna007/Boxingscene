@@ -6,8 +6,23 @@ import FeaturedFightTwo from '@/public/images/featured-fight-2.png';
 import Image from 'next/image';
 import LoadMoreStories from '../components/loadMoreStories';
 import Link from 'next/link';
+import config from "../../../app/config";
 
-const NewsFeed = () => {
+const fetchNews = async () => {
+    const reqOptions = {
+        Headers: {
+            Authorization: `Bearer ${process.env.API_TOKEN}`
+        }
+    }
+    const request = await fetch(`${config.api}/news?populate=*`, reqOptions)
+    const response = await request.json()
+
+    return response;
+}
+
+const NewsFeed = async () => {
+    const news = await fetchNews();
+
     return (
         <div className='mt-6 laptop:px-20 tablet:px-16 px-8 pb-10'>
             <div className='border-t-2 border-primary-gray mb-4'></div>
@@ -16,48 +31,24 @@ const NewsFeed = () => {
                     <Link href='/news'><h2 className='font-semibold text-primary-red hover:text-primary-gray transition-colors ease duration-500 mb-10'>NEWS FEED</h2></Link>
 
                     <ul className='flex flex-col gap-y-6'>
-                        <li className='c-border'>
-                            <h3 className='text-primary-gray text-xs flex items-center gap-2'>
-                                <Image src={UserIcon} />
-                                <p>INTERVIEW</p>
-                            </h3>
-                            <p className='text-sm font-semibold mt-2'>Heading, this is a heading for news feeds and updates</p>
-                            <p className='text-primary-gray text-xs mt-2'>1 hr ago</p>
-                        </li>
-                        <li className='c-border'>
-                            <h3 className='text-primary-gray text-xs flex items-center gap-2'>
-                                <Image src={UserIcon} />
-                                <p>INTERVIEW</p>
-                            </h3>
-                            <p className='text-sm font-semibold mt-2'>Heading, this is a heading for news feeds and updates</p>
-                            <p className='text-primary-gray text-xs mt-2'>1 hr ago</p>
-                        </li>
-                        <li className='c-border'>
-                            <h3 className='text-primary-gray text-xs flex items-center gap-2'>
-                                <Image src={UserIcon} />
-                                <p>INTERVIEW</p>
-                            </h3>
-                            <p className='text-sm font-semibold mt-2'>Heading, this is a heading for news feeds and updates</p>
-                            <p className='text-primary-gray text-xs mt-2'>1 hr ago</p>
-                        </li>
-                        <li className='c-border'>
-                            <h3 className='text-primary-gray text-xs flex items-center gap-2'>
-                                <Image src={UserIcon} />
-                                <p>INTERVIEW</p>
-                            </h3>
-                            <p className='text-sm font-semibold mt-2'>Heading, this is a heading for news feeds and updates</p>
-                            <p className='text-primary-gray text-xs mt-2'>1 hr ago</p>
-                        </li>
-                        <li className='c-border'>
-                            <h3 className='text-primary-gray text-xs flex items-center gap-2'>
-                                <Image src={UserIcon} />
-                                <p>INTERVIEW</p>
-                            </h3>
-                            <p className='text-sm font-semibold mt-2'>Heading, this is a heading for news feeds and updates</p>
-                            <p className='text-primary-gray text-xs mt-2'>1 hr ago</p>
-                        </li>
+
+                        {(
+                            news.data.length === 0 ? <p className='text-center text-red-500 py-4'>Thers is no News found. </p> : <ul className='w-full'>
+                                {news.data.map(({ id, attributes }) => (
+                                    
+                                    <li key={id} className='c-border'>
+                                        <h3 className='text-primary-gray text-xs flex items-center gap-2'>
+                                            <Image src={UserIcon} />
+                                            <p>INTERVIEW</p>
+                                        </h3>
+                                        <p className='text-sm font-semibold mt-2'>{attributes.title}</p>
+                                        <p className='text-primary-gray text-xs mt-2'>1 hr ago</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </ul>
-                    
+
                     <LoadMoreStories />
 
                 </div>
@@ -79,7 +70,7 @@ const NewsFeed = () => {
                     </div>
 
                     <div>
-                        
+
                         <div className='flex items-center gap-2 mt-16 border-b-2 border-black pb-3'>
                             <p className='font-semibold text-sm'>FULL SCHEDULE</p>
                             <Image
@@ -87,7 +78,7 @@ const NewsFeed = () => {
                                 width={20}
                             />
                         </div>
-                        
+
                         <h3 className='text-primary-red font-semibold mt-6'>TRENDING TOPIC</h3>
 
                         <ul className='flex flex-col gap-3 mt-8'>

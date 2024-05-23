@@ -4,7 +4,8 @@
   "info": {
     "singularName": "match",
     "pluralName": "matches",
-    "displayName": "match"
+    "displayName": "match",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,12 +21,6 @@
       "type": "boolean",
       "default": true,
       "required": true
-    },
-    "boxer_matches": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::boxer-match.boxer-match",
-      "mappedBy": "matches"
     }
   }
 }

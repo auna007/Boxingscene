@@ -34,7 +34,7 @@ const Navbar = () => {
                 </Link>
                 <ul className="laptop:flex items-center gap-5 hidden">
                     {navlists.map((list) => (
-                        <li>
+                        <li key={list.name}>
                         <Link href={list.link} className="flex flex-col items-center gap-2">
                             <Image
                                 src={list.icon}

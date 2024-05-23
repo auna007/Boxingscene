@@ -18,12 +18,6 @@
     "country": {
       "type": "string",
       "required": true
-    },
-    "boxer_matches": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::boxer-match.boxer-match",
-      "mappedBy": "boxers"
     }
   }
 }

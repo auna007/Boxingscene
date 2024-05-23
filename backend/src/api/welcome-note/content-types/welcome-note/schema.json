@@ -1,10 +1,10 @@
 {
-  "kind": "collectionType",
-  "collectionName": "news",
+  "kind": "singleType",
+  "collectionName": "welcome_notes",
   "info": {
-    "singularName": "new",
-    "pluralName": "news",
-    "displayName": "News",
+    "singularName": "welcome-note",
+    "pluralName": "welcome-notes",
+    "displayName": "welcome note",
     "description": ""
   },
   "options": {
@@ -18,9 +18,11 @@
       "maxLength": 255,
       "unique": true
     },
-    "description": {
+    "summary": {
       "type": "text",
-      "required": true
+      "required": true,
+      "unique": false,
+      "maxLength": 255
     },
     "image": {
       "type": "media",
@@ -33,10 +35,10 @@
         "audios"
       ]
     },
-    "isTrending": {
-      "type": "boolean",
-      "default": false,
-      "required": true
+    "content": {
+      "type": "text",
+      "required": true,
+      "default": "content"
     }
   }
 }

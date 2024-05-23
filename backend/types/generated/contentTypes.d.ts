@@ -801,11 +801,6 @@ export interface ApiBoxerBoxer extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required;
     country: Attribute.String & Attribute.Required;
-    boxer_matches: Attribute.Relation<
-      'api::boxer.boxer',
-      'manyToMany',
-      'api::boxer-match.boxer-match'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -830,21 +825,30 @@ export interface ApiBoxerMatchBoxerMatch extends Schema.CollectionType {
     singularName: 'boxer-match';
     pluralName: 'boxer-matches';
     displayName: 'boxer_match';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    boxers: Attribute.Relation<
+    boxer_1: Attribute.Relation<
       'api::boxer-match.boxer-match',
-      'manyToMany',
+      'oneToOne',
       'api::boxer.boxer'
     >;
-    matches: Attribute.Relation<
+    boxer_2: Attribute.Relation<
       'api::boxer-match.boxer-match',
-      'manyToMany',
+      'oneToOne',
+      'api::boxer.boxer'
+    >;
+    match: Attribute.Relation<
+      'api::boxer-match.boxer-match',
+      'oneToOne',
       'api::match.match'
     >;
+    isFeatured: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -894,79 +898,13 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
-export interface ApiCommentComment extends Schema.CollectionType {
-  collectionName: 'comments';
-  info: {
-    singularName: 'comment';
-    pluralName: 'comments';
-    displayName: 'comment';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    comment: Attribute.Text & Attribute.Required;
-    video: Attribute.Relation<
-      'api::comment.comment',
-      'manyToOne',
-      'api::video.video'
-    >;
-    new: Attribute.Relation<'api::comment.comment', 'oneToOne', 'api::new.new'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::comment.comment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::comment.comment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiForumForum extends Schema.CollectionType {
-  collectionName: 'forums';
-  info: {
-    singularName: 'forum';
-    pluralName: 'forums';
-    displayName: 'forum';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required & Attribute.Unique;
-    status: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::forum.forum',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::forum.forum',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiMatchMatch extends Schema.CollectionType {
   collectionName: 'matches';
   info: {
     singularName: 'match';
     pluralName: 'matches';
     displayName: 'match';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -974,11 +912,6 @@ export interface ApiMatchMatch extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
     status: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
-    boxer_matches: Attribute.Relation<
-      'api::match.match',
-      'manyToMany',
-      'api::boxer-match.boxer-match'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1002,16 +935,22 @@ export interface ApiNewNew extends Schema.CollectionType {
   info: {
     singularName: 'new';
     pluralName: 'news';
-    displayName: 'New';
+    displayName: 'News';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
     description: Attribute.Text & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
-    trending: Attribute.Boolean &
+    isTrending: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
@@ -1024,71 +963,44 @@ export interface ApiNewNew extends Schema.CollectionType {
   };
 }
 
-export interface ApiTopicTopic extends Schema.CollectionType {
-  collectionName: 'topics';
+export interface ApiWelcomeNoteWelcomeNote extends Schema.SingleType {
+  collectionName: 'welcome_notes';
   info: {
-    singularName: 'topic';
-    pluralName: 'topics';
-    displayName: 'topic';
+    singularName: 'welcome-note';
+    pluralName: 'welcome-notes';
+    displayName: 'welcome note';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    topic: Attribute.String & Attribute.Required & Attribute.Unique;
-    forum: Attribute.Relation<
-      'api::topic.topic',
-      'oneToOne',
-      'api::forum.forum'
-    >;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    summary: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    image: Attribute.Media & Attribute.Required;
+    content: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'content'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::topic.topic',
+      'api::welcome-note.welcome-note',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::topic.topic',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiVideoVideo extends Schema.CollectionType {
-  collectionName: 'videos';
-  info: {
-    singularName: 'video';
-    pluralName: 'videos';
-    displayName: 'video';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required & Attribute.Unique;
-    description: Attribute.Text & Attribute.Required;
-    url: Attribute.String & Attribute.Required;
-    comments: Attribute.Relation<
-      'api::video.video',
-      'oneToMany',
-      'api::comment.comment'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::video.video',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::video.video',
+      'api::welcome-note.welcome-note',
       'oneToOne',
       'admin::user'
     > &
@@ -1117,12 +1029,9 @@ declare module '@strapi/types' {
       'api::boxer.boxer': ApiBoxerBoxer;
       'api::boxer-match.boxer-match': ApiBoxerMatchBoxerMatch;
       'api::category.category': ApiCategoryCategory;
-      'api::comment.comment': ApiCommentComment;
-      'api::forum.forum': ApiForumForum;
       'api::match.match': ApiMatchMatch;
       'api::new.new': ApiNewNew;
-      'api::topic.topic': ApiTopicTopic;
-      'api::video.video': ApiVideoVideo;
+      'api::welcome-note.welcome-note': ApiWelcomeNoteWelcomeNote;
     }
   }
 }

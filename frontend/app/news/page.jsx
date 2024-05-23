@@ -4,8 +4,26 @@ import ArrowRed from '@/public/icons/arrow-right-red.svg'
 import NewsImage from '@/public/images/news-image.png'
 import Image from 'next/image'
 import LoadMoreStories from '../ui/components/loadMoreStories'
+import config from "./config.js";
 
-const Page = () => {
+const fetchNews = async () => {
+  const reqOptions = {
+    Headers: {
+      Authorization: `Bearer ${process.env.API_TOKEN}`
+    }
+  }
+  const request = await fetch(`http://localhost:1337/api/news?populate=*`, reqOptions)
+  const response = await request.json()
+
+  return response;
+}
+
+// const Page = () => {
+const Page = async () => {
+    const news = await fetchNews();
+
+    console.log('news', news.data);
+
     return (
         <main className='w-full tablet:flex justify-between pt-10'>
             <div className='basis-[55%]'>
