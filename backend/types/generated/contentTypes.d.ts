@@ -984,7 +984,7 @@ export interface ApiWelcomeNoteWelcomeNote extends Schema.SingleType {
     summary: Attribute.Text &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        maxLength: 100;
+        maxLength: 255;
       }>;
     image: Attribute.Media & Attribute.Required;
     content: Attribute.Text &

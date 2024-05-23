@@ -22,7 +22,7 @@
       "type": "text",
       "required": true,
       "unique": false,
-      "maxLength": 100
+      "maxLength": 255
     },
     "image": {
       "type": "media",
