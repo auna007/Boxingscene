@@ -7,6 +7,7 @@ import Image from 'next/image';
 import LoadMoreStories from '../components/loadMoreStories';
 import Link from 'next/link';
 import config from "../../../app/config";
+import { timeAgo } from '@/app/lib/time-ago';
 
 const fetchNews = async () => {
     const reqOptions = {
